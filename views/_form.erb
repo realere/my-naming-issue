@@ -1,0 +1,9 @@
+<form method="post" action='/bookmarks/<%= @bookmark.id %>'>
+
+<dl>
+  <dt><label for='bookmark_name'>Name:</label></dt>
+  <dd><input id='bookmark_name' name='bookmark[name]' type='text' autofocus value="<%= @bookmark.name %>"></dd>
+</dl>
+
+<button id="button">Update Bookmark</button>
+</form>
