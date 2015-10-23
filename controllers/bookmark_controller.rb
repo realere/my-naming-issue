@@ -1,10 +1,10 @@
-get '/bookmarks/new' do
+get '/bookmark/new' do
     @bookmark = Bookmark.new
-    erb :'bookmarks/new'
+    erb :'bookmark/new'
   end
 
-  get '/bookmarks' do
+  get '/bookmark' do
   @bookmark = Bookmark.all
-  erb :'bookmarks/index'
+  erb :'bookmark/index'
 end
 

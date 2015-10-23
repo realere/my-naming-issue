@@ -1,9 +1,9 @@
 <ul>
-  <% @categories.each do |category| %>
+  <% @bookmark.each do |bookmark| %>
     <li>
-      <%= category.name %>
-      <a href="/categories/<%= category.id %>/edit">edit</a>
-      <form method='post' action="/categories/<%=category.id %>/delete">
+      <%= bookmark.name %>
+      <a href="/bookmark/<%= bookmark.id %>/edit">edit</a>
+      <form method='post' action="/bookmark/<%=bookmark%>/delete">
       <button>delete!</button>
       </form>
     </li>
