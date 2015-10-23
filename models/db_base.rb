@@ -3,7 +3,7 @@ class DBBase
   attr_accessor :id
   
 def self.run_sql(sql)
-    conn = PG.connect(dbname: 'bookmarker', host: 'localhost')
+    conn = PG.connect(dbname: 'bookmark', host: 'localhost')
     begin
       result = conn.exec(sql)
     ensure

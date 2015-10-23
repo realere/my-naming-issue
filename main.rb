@@ -10,12 +10,14 @@ require 'pg'
 # after do
 #   @db.close
 # end
-require_relative 'controllers/bookmarker_controller'
+require_relative 'controllers/bookmark_controller'
 require_relative 'models/db_base'
 require_relative 'models/bookmark'
 
  get '/' do
    erb :home
  end
+
+
 
 
