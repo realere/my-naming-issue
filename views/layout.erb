@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset='utf-8'>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Bookmarker</title>
+ <meta charset='utf-8'>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <title>Bookmarker</title>
 </head>
 <body>
-  <header>
-    <h1><span class='branding'>My bookmarks</span> &ndash; lets store it for you so you dont have to remember!</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/bookmarks">My Bookmarks</a></li>
-      <li><a href="/bookmarks/new">Add New Bookmark</a></li>
-      <li><a href="#put something here">Search all bookmarks</a></li>
-    </ul>
-  </nav>
-  <%= yield %>
+ <header>
+ <h1><span class='branding'>My bookmarks</span> &ndash; lets store it for you so you dont have to remember!</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/bookmark">My Bookmarks</a></li>
+    <li><a href="/bookmark/new">Add New Bookmark</a></li>
+    <li><a href="#put something here">Search all bookmarks</a></li>
+  </ul>
+</nav>
+<%= yield %>
 </body>
 </html>

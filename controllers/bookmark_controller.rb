@@ -1,16 +1,10 @@
-get '/bookmarks/new' do
-  @bookmark = Bookmark.new
-  erb :'bookmarks/new'
-end
+get '/bookmark/new' do
+    @bookmark = Bookmark.new
+    erb :'bookmark/new'
+  end
 
-post '/bookmarks' do
-  @bookmark = Bookmark.new(params[:bookmark])
-  @bookmark.save
-  redirect to('/bookmarks')
-end
-
-get '/bookmarks' do
+  get '/bookmark' do
   @bookmark = Bookmark.all
-  erb :'bookmarks/index'
+  erb :'bookmark/index'
 end
 
