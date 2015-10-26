@@ -89,7 +89,7 @@ class DBBase
     if id.nil?
       sql_fields = []
       sql_values = []
-      attributes.each do |attribute, type|
+      attribute.each do |attribute, type|
         sql_fields << attribute
         sql_values << sql_sanitize(self.send(attribute), type)
       end
@@ -99,7 +99,7 @@ class DBBase
 
     else
 
-      sql_fields_and_values = attributes.map do |attribute, type|
+      sql_fields_and_values = attribute.map do |attribute, type|
         '#{attribute} = #{sql_sanitize(self.send(attribute), type)}'
       end
 
