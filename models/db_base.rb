@@ -29,7 +29,7 @@ class DBBase
   end
 
   def self.run_sql(sql)
-    conn = PG.connect(dbname: 'bookmark', host: 'localhost')
+    conn = PG.connect(dbname: 'bookmarks', host: 'localhost')
     begin
       result = conn.exec(sql)
     ensure
@@ -39,12 +39,12 @@ class DBBase
   end
 
   def self.all
-    results = run_sql("SELECT * FROM #{table_name}")
+    results = run_sql('SELECT * FROM #{table_name}')
     results.map { |result| self.new(result) }
   end
 
   def self.find(id)
-    result = run_sql("SELECT * FROM #{table_name} WHERE id = #{sql_sanitize(id, :integer)}").first
+    result = run_sql('SELECT * FROM #{table_name} WHERE id = #{sql_sanitize(id, :integer)}').first
     self.new(result) if result
   end
 
@@ -94,16 +94,16 @@ class DBBase
         sql_values << sql_sanitize(self.send(attribute), type)
       end
 
-      sql = "INSERT INTO #{table_name} (#{sql_fields.join(', ')}) VALUES (#{sql_values.join(', ')}) RETURNING id"
+      sql = 'INSERT INTO #{table_name} (#{sql_fields.join(', ')}) VALUES (#{sql_values.join(', ')}) RETURNING id'
       self.id = run_sql(sql).first['id']
 
     else
 
       sql_fields_and_values = attributes.map do |attribute, type|
-        "#{attribute} = #{sql_sanitize(self.send(attribute), type)}"
+        '#{attribute} = #{sql_sanitize(self.send(attribute), type)}'
       end
 
-      sql = "UPDATE #{table_name} SET #{sql_fields_and_values.join(', ')} WHERE id = #{sql_sanitize(id, :integer)}"
+      sql = 'UPDATE #{table_name} SET #{sql_fields_and_values.join(', ')} WHERE id = #{sql_sanitize(id, :integer)}'
       run_sql(sql)
     end
 
@@ -117,7 +117,7 @@ class DBBase
   end
 
   def destroy
-    run_sql("DELETE FROM #{table_name} WHERE id = #{sql_sanitize(id, :integer)}")
+    run_sql('DELETE FROM #{table_name} WHERE id = #{sql_sanitize(id, :integer)}')
   end
 
 end

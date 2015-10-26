@@ -1,0 +1,21 @@
+ <form action='/bookmarks/<%= @bookmark.id %>' method='post'>
++
+   <dl>      <dl>
+    <dt><label for='name'>Name:</label></dt>        <dt><label for='name'>Name:</label></dt>
+    <dd><input id='name' name='bookmark[name]' type='text' value="<%=@bookmark.name%>" autofocus></dd>        <dd><input id='name' name='bookmark[name]' type='text' value="<%=@bookmark.name%>" autofocus></dd>
++
+    <dt><label for='description'>Description:</label></dt>        <dt><label for='description'>Description:</label></dt>
+    <dd><input id='description' name='bookmark[description]' type='text' value="<%=@bookmark.description%>"></dd>       <dd><input id='description' name='bookmark[description]' type='text' value="<%=@bookmark.description%>"></dd>
++
+    <dt><label for='category'>Category:</label></dt>        <dt><label for='category'>Category:</label></dt>
+    <dd><input id='category' name='bookmark[category]' type='text' value="<%=@bookmark.category%>"></dd>        <dd><input id='category' name='bookmark[category]' type='text' value="<%=@bookmark.category%>"></dd>
++
+    <dt><label for='url'>Url:</label></dt>        <dt><label for='url'>Url:</label></dt>
+    <dd><input id='url' name='bookmark[url]' type='text' value="<%=@bookmark.url%>"></dd>       <dd><input id='url' name='bookmark[url]' type='text' value="<%=@bookmark.url%>"></dd>
+  </dl>     </dl>
+  <button>Submit</button>     <button>Submit</button>
+ </form>     </form>
++
+ <form method="get" action="/bookmarks">     <form method="get" action="/bookmarks">
+     <button type="submit">Cancel</button>         <button type="submit">Cancel</button>
+ </form>     

@@ -3,4 +3,7 @@
   <dd><input id='bookmark_name' name='bookmark[name]' type='text' autofocus value="<%= @bookmark.name %>"></dd>
 </dl>
 
-<button id="button">Update Bookmark</button>
+<dl>
+  <dt><label for='bookmark_url'>URL:</label></dt>
+  <dd><input id='bookmark_url' url='bookmark[url]' type='text' autofocus value="<%= @bookmark.url %>"></dd>
+</dl>
